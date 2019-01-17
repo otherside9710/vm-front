@@ -16,7 +16,7 @@ class PeliculasController extends Controller
         //intanciamos el controller donde esta el metodo curl con el cual realizaremos las peticiones
         $curl = new CurlController();
         //url del microservicio findAll que trae toda la lista de peliculas
-        $url_findAll = 'http://localhost:5000/peliculas/findAll';
+        $url_findAll = 'http://52.14.94.46:5000/peliculas/findAll';
         //variable para indicar si hubo una busqueda y desplegar un boton en la vista
         $flag = false;
 
@@ -26,7 +26,7 @@ class PeliculasController extends Controller
             //si hay una busqueda por nombre entrara aqui y ira al microservicio findByNombre
             $input = Input::get('search');
             //armo la url concatenandole el parametro search y el valor que ingresamos en la busqueda
-            $url_findByNombre = 'http://localhost:5000/peliculas/findByNombre?search=' . $input;
+            $url_findByNombre = 'http://52.14.94.46:5000/peliculas/findByNombre?search=' . $input;
             $flag = true;
             $peliculas = $curl->curl($url_findByNombre, null, 'GET');
         }
@@ -40,7 +40,7 @@ class PeliculasController extends Controller
         //intanciamos el controller donde esta el metodo curl con el cual realizaremos las peticiones
         $curl = new CurlController();
         //url del microservicio findAll que trae toda la lista de peliculas
-        $url_findAll = 'http://localhost:5000/peliculas/findAll';
+        $url_findAll = 'http://52.14.94.46:5000/peliculas/findAll';
         //variable para indicar si hubo una busqueda y desplegar un boton en la vista
         $flag = false;
 
@@ -50,7 +50,7 @@ class PeliculasController extends Controller
             //si hay una busqueda por nombre entrara aqui y ira al microservicio findByNombre
             $input = Input::get('search');
             //armo la url concatenandole el parametro search y el valor que ingresamos en la busqueda
-            $url_findByNombre = 'http://localhost:5000/peliculas/findByNombre?search=' . $input;
+            $url_findByNombre = 'http://52.14.94.46:5000/peliculas/findByNombre?search=' . $input;
             $flag = true;
             $peliculas = $curl->curl($url_findByNombre, null, 'GET');
         }
@@ -62,7 +62,7 @@ class PeliculasController extends Controller
     public function reservar($id)
     {
         $curl = new CurlController();
-        $url_findById = 'http://localhost:5000/peliculas/findById?id=' . $id;
+        $url_findById = 'http://52.14.94.46:5000/peliculas/findById?id=' . $id;
 
         $peliculas = $curl->curl($url_findById, null, 'GET');
 
